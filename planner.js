@@ -98,7 +98,7 @@ console.log(myHour());
 //     $(this).addClass("future");
 //   }
 //set color blocks by comparing current time with the time in blocks
-$("#planner").each(function () {
+$(".time-block").each(function () {
   console.log(this);
   //targets the timblock saves it to timeRow
   var timeRow = $(this);

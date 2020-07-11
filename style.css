@@ -10,9 +10,14 @@ textarea {
   resize: none;
   color: #000000;
   border-left: 1px solid black;
+  height: 8px;
+  margin: 20px 10px;
+}
+.input-group-prepend {
+  width: 70px;
+  margin: auto;
   padding: 10px;
 }
-
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -21,7 +26,7 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description {
+.form-control {
   white-space: pre-wrap;
 }
 
