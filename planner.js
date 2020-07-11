@@ -24,14 +24,11 @@ var plannerEl = $("#planner");
 //   console.log([i]);
 // }
 
-//GET THE CURRENT DATE and display it
-var date = moment();
-currentDateEl.text(date.format("dddd MMMM Do YYYY"));
-var now = moment().format("H");
-console.log(now);
-currentTimeEl.text(now + ":00 (military time)");
+//GET THE CURRENT DATE and TIME --> display it
+currentDateEl.text(moment().format("LLLL"));
+//create a hour variable to use later
 
-//GET THE CURRENT TIME and display it
+//GET THE CURRENT TIME
 function myHour() {
   var d = new Date();
   var n = d.getHours();
