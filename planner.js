@@ -2,15 +2,13 @@
 $(document).ready(() => {
   console.log("ready!");
 });
-
 //DOM elements
 var container = $(".container");
 var inputGroup = $(".time-block");
 var currentDateEl = $("#currentDay");
 var currentTimeEl = $("#currentTime");
 var plannerEl = $("#planner");
-
-//NON WORKING CODE - trying to generate the divs through JS
+//NON WORKING CODE===>trying to generate the divs through JS
 // var workingHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 //create a div element with timeblock, input area and submit button
 // var timeBlockEl = $(
@@ -23,11 +21,8 @@ var plannerEl = $("#planner");
 //   container.append(timeBlockEl);
 //   console.log([i]);
 // }
-
 //GET THE CURRENT DATE and TIME --> display it
 currentDateEl.text(moment().format("LLLL"));
-//create a hour variable to use later
-
 //GET THE CURRENT TIME
 function myHour() {
   var d = new Date();
@@ -35,36 +30,32 @@ function myHour() {
   return parseInt(n);
 }
 console.log(myHour());
-
 //set color blocks by comparing current time with the time in blocks
 $(".time-block").each(function () {
   console.log(this);
   //targets the timblock saves it to timeRow
   var timeRow = $(this);
-  console.log(timeRow);
   //put in the user time
   var now = myHour();
-  console.log(now);
   //splits the number from the hour which allows it to be parsed so we can compare it to the hour
   var time = parseInt(timeRow.attr("id").split("-")[1]);
   console.log(time);
   if (now === time) {
-    $(this).addClass("present");
     //if time.key === myHour, then block is red
+    $(this).addClass("present");
   }
   if (now > time) {
+    //if time.key > myHour, then block is grey
     $(this).addClass("past");
-    //if time.key < myHour, then block is grey
   }
   if (now < time) {
-    $(this).addClass("future");
     // if time.key> if time.key < myHour, then block is green
+    $(this).addClass("future");
   }
 });
-
 var userInputByHour = [];
 //LOCALSTORAGE
-// jQuery Save button savebutton is targeted, when save button is clicked
+// jQuery, when save button is clicked
 $(".btn").on("click", function () {
   //get nearby values
   console.log(this);
@@ -75,8 +66,7 @@ $(".btn").on("click", function () {
   //set items in local storage.
   localStorage.setItem(time, myToDo);
 });
-
-// // calling value of hour-9 and placing it in the proper hour description value
+//calling value of hour-9 and placing it in the proper hour description value
 $("#hour-9 .form-control").val(localStorage.getItem("hour-9"));
 $("#hour-10 .form-control").val(localStorage.getItem("hour-10"));
 $("#hour-11 .form-control").val(localStorage.getItem("hour-11"));

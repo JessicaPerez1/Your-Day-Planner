@@ -5,11 +5,11 @@ Create a simple calendar application that allows the user to save events for eac
 ### What I did
 
 Local storage is used to stored the data, even after refreshing the page and Bootstrap makes the app responsive.
+Current time of the day will be colored in red, past in grey and future in green.
 
-### Project screenshots
+### Project screenshot
 
 ![Day Planner screenshot](planner.png)
-![Planner local storage screenshot](planner-storage.png)
 
 ## Project submissions
 
